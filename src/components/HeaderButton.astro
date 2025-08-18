@@ -1,0 +1,31 @@
+---
+import "../styles/colors.css";
+---
+
+<button>
+    <span>Button</span>
+</button>
+
+<style>
+    button {
+        background: var(--secondary);
+        border: none;
+        padding: 10px 20px;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        width: 120px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transform: skew(-21deg);
+    }
+
+    span {
+        display: inline-block;
+        transform: skew(21deg);
+    }
+
+    button:hover {
+        scale: 1.05;
+    }
+</style>
