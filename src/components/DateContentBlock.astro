@@ -1,0 +1,31 @@
+---
+const { date } = Astro.props;
+---
+
+<div class="container grid">
+  <div class="column">
+    <p>{date}</p>
+  </div>
+  <div class="column">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .container.grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+    padding: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+  }
+  .container .column {
+    color: black;
+    font-size: 1.2rem;
+  }
+</style>

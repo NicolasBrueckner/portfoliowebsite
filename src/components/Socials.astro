@@ -1,0 +1,38 @@
+---
+import Icon from "./LinkableIcon.astro";
+---
+
+<h1>Socials</h1>
+<div class="socials-container">
+  <Icon
+    name="GitHub"
+    icon="/social_icons/github-icon.svg"
+    url="https://github.com/NicolasBrueckner"
+  />
+  <Icon
+    name="LinkedIn"
+    icon="/social_icons/linkedin-icon.svg"
+    url="www.linkedin.com/in/nicolas-brückner-1466802b5"
+  />
+  <Icon
+    name="Itch.io"
+    icon="/social_icons/itchio-icon.svg"
+    url="https://nicolasbrueckner.itch.io/"
+  />
+  <Icon
+    name="Email"
+    icon="/social_icons/mail-icon.svg"
+    url="mailto:nicolas.brueckner.work@gmail.com"
+  />
+</div>
+
+<style>
+  .socials-container {
+    margin: 20px 0px;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>

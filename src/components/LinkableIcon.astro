@@ -1,0 +1,75 @@
+---
+export interface Props {
+    name: string;
+    icon: string;
+    url?: string;
+}
+
+const { name, icon, url } = Astro.props;
+---
+
+{
+    url ? (
+        <a href={url} class="container">
+            <img
+                class="icon"
+                src={icon}
+                alt={`${name} icon`}
+                loading="lazy"
+                decoding="async"
+            />
+            <span class="tooltip-text">{name}</span>
+        </a>
+    ) : (
+        <div class="container">
+            <img
+                class="icon"
+                src={icon}
+                alt={`${name} icon`}
+                loading="lazy"
+                decoding="async"
+            />
+            <span class="tooltip-text">{name}</span>
+        </div>
+    )
+}
+
+<style>
+    .container {
+        margin: 5px 10px;
+        padding: 5px;
+        position: relative;
+        font-weight: bolder;
+    }
+
+    .icon {
+        width: 100px;
+        height: 100px;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .tooltip-text {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff; /* White background */
+        color: #000; /* Black text */
+        padding: 6px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-weight: bolder;
+        z-index: 2;
+    }
+
+    .container:hover .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+        top: -50px;
+    }
+</style>

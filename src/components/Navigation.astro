@@ -1,0 +1,38 @@
+---
+import "../styles/colors.css";
+---
+
+<div>
+    <a class="mock_button" href="/"> <span>Home</span> </a>
+    <a class="mock_button" href="/projects"> <span>Projects</span> </a>
+    <a class="mock_button" href="/about"> <span>About</span> </a>
+</div>
+
+<style>
+    .mock_button {
+    background: var(--secondary);
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    text-align: center;
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+    .mock_button span {
+        display: inline-block;
+        transform: skew(21deg);
+        style
+    }
+
+    .mock_button:hover {
+        transform: skew(-21deg) scale(1.05);
+    }
+</style>

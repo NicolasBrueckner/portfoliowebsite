@@ -1,0 +1,57 @@
+---
+export interface Props {
+  orientation?: "horizontal" | "vertical";
+  thickness?: number;
+  length?: string;
+  color?: string;
+  dashed?: boolean;
+  margin?: string;
+}
+
+const {
+  orientation = "horizontal",
+  thickness = 1,
+  length = "100%",
+  color = "black",
+  dashed = false,
+  margin = "10px 0",
+} = Astro.props;
+
+const isHorizontal = orientation === "horizontal";
+const style = `--sep-length:${length};--sep-thickness:${thickness}px;--sep-color:${color};--sep-style:${dashed ? "dashed" : "solid"};--sep-margin:${margin}`;
+---
+
+{
+  isHorizontal ? (
+    <hr
+      role="separator"
+      aria-orientation="horizontal"
+      class="sep"
+      style={style}
+    />
+  ) : (
+    <div
+      role="separator"
+      aria-orientation="vertical"
+      class="sep vertical"
+      style={style}
+    />
+  )
+}
+
+<style>
+  .sep {
+    margin: var(--sep-margin);
+    border: 0;
+    width: var(--sep-length);
+    border-top: var(--sep-thickness) var(--sep-style) var(--sep-color);
+  }
+  .sep.vertical {
+    width: auto;
+    height: var(--sep-length);
+    border-top: 0;
+    border-left: var(--sep-thickness) var(--sep-style) var(--sep-color);
+    /* If used inside flex, this keeps it from shrinking weirdly */
+    flex: 0 0 auto;
+  }
+</style>
