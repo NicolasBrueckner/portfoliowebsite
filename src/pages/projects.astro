@@ -1,12 +1,15 @@
 ---
-import NotHomePageLayout from "../layouts/NotHomePage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 ---
 
-<NotHomePageLayout
-  backgroundUrl="/landscape_ai_image.webp"
-  maxWidth="40%"
-  blur={5}
->
-  <h1>Projects Page</h1>
-  <p>This is the projects page of the website.</p>
-</NotHomePageLayout>
+<BaseLayout>
+  <ContentLayout>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis tempus
+    erat. Sed vehicula, tellus eget varius lobortis, nibh metus eleifend dolor,
+    ac tempus felis elit a diam. Vestibulum mollis dolor vitae mi pulvinar, eget
+    consequat ligula scelerisque. Donec quis elementum eros, in venenatis elit.
+    Cras semper, risus maximus molestie efficitur, sem diam volutpat ex, sit
+    amet tempor odio dolor quis ex. Fusce rutrum sollicitudin fermentum.
+  </ContentLayout>
+</BaseLayout>

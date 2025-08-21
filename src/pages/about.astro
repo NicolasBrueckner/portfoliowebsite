@@ -1,21 +1,23 @@
 ---
 import "../styles/colors.css";
-import NotHomePageLayout from "../layouts/NotHomePage.astro";
 import Skillset from "../components/Skillset.astro";
-import Socials from "../components/Socials.astro";
 import Experience from "../components/Experience.astro";
 import Separator from "../components/Separator.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 ---
 
-<NotHomePageLayout>
-  <h1>About Page</h1>
-  <p>This is the about page of the website.</p>
-  <div class="container">
-    <Skillset />
-    <Separator thickness={2} length="95%" />
-    <Experience />
-  </div>
-</NotHomePageLayout>
+<BaseLayout>
+  <ContentLayout>
+    <h1>About Page</h1>
+    <p>This is the about page of the website.</p>
+    <div class="container">
+      <Skillset />
+      <Separator thickness={2} length="95%" />
+      <Experience />
+    </div>
+  </ContentLayout>
+</BaseLayout>
 
 <style>
   .container {

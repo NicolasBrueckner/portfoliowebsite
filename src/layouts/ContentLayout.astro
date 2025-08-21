@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class="app">
+  <div class="background-container"></div>
+  <main id="main" class="shell" role="main">
+    <div class="content-container">
+      <slot />
+    </div>
+  </main>
+</div>
+
+<style>
+  .app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background-container {
+    position: fixed;
+    inset: 0;
+    background-image: url("/landscape_ai_image.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+  }
+
+  .content-container {
+    line-height: 1.6;
+  }
+
+  .shell {
+    margin-top: var(--header-height);
+    margin-inline: auto;
+    width: 100%;
+    min-inline-size: 72ch;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 16px;
+    background-color: bisque;
+    scrollbar-width: none;
+  }
+</style>

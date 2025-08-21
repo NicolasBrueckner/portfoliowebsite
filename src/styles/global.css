@@ -1,4 +1,14 @@
-@import "./colors.css";
+@import "./reset.css";
+
+:root {
+    --background: #ddd1c7ff;
+    --primary: #c2cfb2ff;
+    --secondary: #8db580ff;
+    --accent: #7e8987ff;
+    --text: #4b4a67ff;
+    
+    --header-height: 60px;
+}
 
 html, body {
     margin: 0;
@@ -7,3 +17,21 @@ html, body {
     background-color: var(--background);
     color: var(--text);
 }
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 0.4rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
