@@ -1,20 +1,29 @@
 ---
-import Block from "./DateContentBlock.astro";
+import Item from "./ExperienceItem.astro";
 ---
 
 <div class="component-container">
   <h1>Experience</h1>
   <div class="experience-container">
-    <Block date="October 2023 - February 2024">
-      I have worked on various projects, including web development, data
-      analysis, and machine learning. My experience spans multiple programming
-      languages and frameworks.
-    </Block>
-    <Block date="Oktober 2022 - January 2023">
-      I have worked on various projects, including web development, data
-      analysis, and machine learning. My experience spans multiple programming
-      languages and frameworks.
-    </Block>
+    <Item
+      date="October 2023 - February 2024"
+      company="Thoughtfish"
+      location="Berlin, Germany"
+      role="Unity/C# Intern"
+    >
+      Was integrated into the development process of a game project. Prototyped
+      gameplay systems including a clothing and coloring system.
+    </Item>
+    <Item
+      date="Oktober 2022 - January 2023"
+      company="tissue inu"
+      location="remote"
+      role="German Localization, Game Tester"
+    >
+      Unofficially worked with the small team of tissue inu to add German
+      language support to the game "Her Name was Fire" and contributed to QA
+      testing.
+    </Item>
   </div>
 </div>
 
