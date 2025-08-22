@@ -2,19 +2,36 @@
 import Block from "./DateContentBlock.astro";
 ---
 
-<h1>Experience</h1>
-<Block date=" 2023-10-01">
-  I have worked on various projects, including web development, data analysis,
-  and machine learning. My experience spans multiple programming languages and
-  frameworks.
-</Block>
-<Block date=" 2023-10-01">
-  I have worked on various projects, including web development, data analysis,
-  and machine learning. My experience spans multiple programming languages and
-  frameworks.
-</Block>
-<Block date=" 2023-10-01">
-  I have worked on various projects, including web development, data analysis,
-  and machine learning. My experience spans multiple programming languages and
-  frameworks.
-</Block>
+<div class="component-container">
+  <h1>Experience</h1>
+  <div class="experience-container">
+    <Block date="October 2023 - February 2024">
+      I have worked on various projects, including web development, data
+      analysis, and machine learning. My experience spans multiple programming
+      languages and frameworks.
+    </Block>
+    <Block date="Oktober 2022 - January 2023">
+      I have worked on various projects, including web development, data
+      analysis, and machine learning. My experience spans multiple programming
+      languages and frameworks.
+    </Block>
+  </div>
+</div>
+
+<style>
+  .component-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .experience-container {
+    width: 100%;
+    margin: 30px 0;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

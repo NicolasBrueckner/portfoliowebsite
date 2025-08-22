@@ -29,21 +29,30 @@
 
   .content-container {
     line-height: 1.6;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: var(--primary);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    border-radius: 10px;
   }
 
   .shell {
-    margin-top: var(--header-height);
+    margin-top: calc(var(--header-height) + 10px);
     margin-inline: auto;
-    width: clamp(50%, 80vw, 100%);
+    width: 100%;
+    height: calc(100vh - var(--header-height) - 20px);
+    max-width: 1700px;
     min-inline-size: 72ch;
     position: relative;
     z-index: 1;
     display: flex;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     box-sizing: border-box;
-    padding: 16px;
-    background-color: bisque;
-    scrollbar-width: none;
+    padding: 5px;
+    background-color: var(--accent);
+    border-radius: 10px;
   }
 </style>

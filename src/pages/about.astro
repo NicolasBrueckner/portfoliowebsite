@@ -1,5 +1,4 @@
 ---
-import "../styles/colors.css";
 import Skillset from "../components/Skillset.astro";
 import Experience from "../components/Experience.astro";
 import Separator from "../components/Separator.astro";
@@ -9,24 +8,8 @@ import ContentLayout from "../layouts/ContentLayout.astro";
 
 <BaseLayout>
   <ContentLayout>
-    <h1>About Page</h1>
-    <p>This is the about page of the website.</p>
-    <div class="container">
-      <Skillset />
-      <Separator thickness={2} length="95%" />
-      <Experience />
-    </div>
+    <Skillset />
+    <Separator thickness={3} margin="50px" length="75%" color="var(--text)" />
+    <Experience />
   </ContentLayout>
 </BaseLayout>
-
-<style>
-  .container {
-    padding: 1rem;
-    display: flex;
-    width: 50%;
-    margin-inline: auto;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--primary);
-  }
-</style>
