@@ -1,0 +1,17 @@
+---
+const { link } = Astro.props;
+---
+
+<a class="mock-button" href={link}>
+  <slot />
+</a>
+
+<style>
+  .mock-button {
+    height: 100%;
+    padding: 10px;
+    transform: skew(-21deg);
+    align-items: center;
+    justify-content: center;
+  }
+</style>

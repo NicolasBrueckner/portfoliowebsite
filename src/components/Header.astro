@@ -1,7 +1,43 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import Social from "../components/Socials.astro";
 ---
 
 <header>
-  <Navigation />
+  <div class="navigation-container">
+    <Navigation />
+  </div>
+  <div class="socials-container">
+    <Social />
+  </div>
 </header>
+
+<style>
+  header {
+    height: var(--header-height);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: var(--primary-transparent);
+    padding: 0.4rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+  }
+
+  .navigation-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .socials-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: end;
+  }
+</style>

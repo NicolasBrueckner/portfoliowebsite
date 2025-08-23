@@ -1,47 +1,24 @@
 ---
-
+import ButtonShell from "./ButtonShell.astro";
 ---
 
-<div>
-    <a class="mock_button" href="/"> <span>Home</span> </a>
-    <a class="mock_button" href="/projects"> <span>Projects</span> </a>
-    <a class="mock_button" href="/about"> <span>About</span> </a>
+<div class="navigation-root">
+    <ButtonShell link="/">
+        <span class="button-content">Home</span>
+    </ButtonShell>
+    <ButtonShell link="/projects">
+        <span class="button-content">Projects</span>
+    </ButtonShell>
+    <ButtonShell link="/about">
+        <span class="button-content">About</span>
+    </ButtonShell>
 </div>
 
 <style>
-    div {
-        height: 100%;
+    .navigation-root {
         display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .mock_button {
-        background-color: var(--secondary);
-        border: none;
         height: 100%;
-        padding: 0 1.2em;
-        display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: calc(var(--header-height) * 0.3);
-        font-weight: 600;
-        line-height: 1;
-        text-transform: uppercase;
-        cursor: pointer;
-        transform: skew(-21deg);
-        text-align: center;
-        color: var(--text);
-        text-decoration: none;
-        transition: transform 0.2s ease;
-    }
-
-    .mock_button span {
-        display: inline-block;
-        transform: skew(21deg);
-    }
-
-    .mock_button:hover {
-        transform: skew(-21deg) scale(1.05);
     }
 </style>

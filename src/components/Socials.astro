@@ -1,38 +1,37 @@
 ---
-import Icon from "./LinkableIcon.astro";
+import ButtonShell from "./ButtonShell.astro";
 ---
 
-<h1>Socials</h1>
-<div class="socials-container">
-  <Icon
-    name="GitHub"
-    icon="/social_icons/github-icon.svg"
-    url="https://github.com/NicolasBrueckner"
-  />
-  <Icon
-    name="LinkedIn"
-    icon="/social_icons/linkedin-icon.svg"
-    url="www.linkedin.com/in/nicolas-brückner-1466802b5"
-  />
-  <Icon
-    name="Itch.io"
-    icon="/social_icons/itchio-icon.svg"
-    url="https://nicolasbrueckner.itch.io/"
-  />
-  <Icon
-    name="Email"
-    icon="/social_icons/mail-icon.svg"
-    url="mailto:nicolas.brueckner.work@gmail.com"
-  />
+<div class="socials-root">
+  <ButtonShell link="https://github.com/NicolasBrueckner">
+    <img
+      class="button-content"
+      src="/social_icons/github-icon.svg"
+      alt="GitHub"
+    />
+  </ButtonShell>
+  <ButtonShell link="https://nicolasbrueckner.itch.io/">
+    <img
+      class="button-content"
+      src="/social_icons/itchio-icon.svg"
+      alt="ItchIo"
+    />
+  </ButtonShell>
+  <ButtonShell link="https://linkedin.com/in/nicolas-brückner-1466802b5">
+    <img
+      class="button-content"
+      src="/social_icons/linkedin-icon.svg"
+      alt="LinkedIn"
+    />
+  </ButtonShell>
+  <ButtonShell link="mailto:nicolas.brueckner.work@gmail.com">
+    <img class="button-content" src="/social_icons/mail-icon.svg" alt="Email" />
+  </ButtonShell>
 </div>
 
 <style>
-  .socials-container {
-    margin: 20px 0px;
-    width: 100%;
-    margin-inline: auto;
+  .socials-root {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    height: 100%;
   }
 </style>

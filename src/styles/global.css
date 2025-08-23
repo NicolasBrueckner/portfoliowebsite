@@ -8,7 +8,7 @@
     --accent: rgb(185, 178, 138);
     --text: rgb(80, 75, 56);
     
-    --header-height: 60px;
+    --header-height: 100px;
 }
 
 html, body {
@@ -24,19 +24,15 @@ body {
     height: 100vh;
 }
 
-header {
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-transparent);
-    padding: 0.4rem;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-}
-
 h1 {
     color: var(--text);
+}
+
+.button-content {
+    display: flex;
+    height: 100%;
+    transform: skew(21deg);
+    align-items: center;
+    justify-content: center;
+    
 }
