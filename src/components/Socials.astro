@@ -1,31 +1,23 @@
 ---
 import ButtonShell from "./ButtonShell.astro";
+import GitHubIcon from "../assets/social_icons/github-icon.svg";
+import ItchIoIcon from "../assets/social_icons/itchio-icon.svg";
+import LinkedInIcon from "../assets/social_icons/linkedin-icon.svg";
+import MailIcon from "../assets/social_icons/mail-icon.svg";
 ---
 
 <div class="socials-root">
   <ButtonShell link="https://github.com/NicolasBrueckner">
-    <img
-      class="button-content"
-      src="/social_icons/github-icon.svg"
-      alt="GitHub"
-    />
+    <GitHubIcon class="social-icon" />
   </ButtonShell>
   <ButtonShell link="https://nicolasbrueckner.itch.io/">
-    <img
-      class="button-content"
-      src="/social_icons/itchio-icon.svg"
-      alt="ItchIo"
-    />
+    <ItchIoIcon class="social-icon" />
   </ButtonShell>
   <ButtonShell link="https://linkedin.com/in/nicolas-brückner-1466802b5">
-    <img
-      class="button-content"
-      src="/social_icons/linkedin-icon.svg"
-      alt="LinkedIn"
-    />
+    <LinkedInIcon class="social-icon" />
   </ButtonShell>
   <ButtonShell link="mailto:nicolas.brueckner.work@gmail.com">
-    <img class="button-content" src="/social_icons/mail-icon.svg" alt="Email" />
+    <MailIcon />
   </ButtonShell>
 </div>
 
@@ -33,5 +25,13 @@ import ButtonShell from "./ButtonShell.astro";
   .socials-root {
     display: flex;
     height: 100%;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .socials-root svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--text);
   }
 </style>

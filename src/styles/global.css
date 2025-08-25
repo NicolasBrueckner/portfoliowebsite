@@ -5,6 +5,7 @@
     --primary: rgb(248, 243, 217);
     --primary-transparent: rgba(248, 243, 217, 0.25);
     --secondary: rgb(235, 229, 194);
+    --secondary-hover: rgb(205, 199, 164);
     --accent: rgb(185, 178, 138);
     --text: rgb(80, 75, 56);
     
@@ -26,13 +27,4 @@ body {
 
 h1 {
     color: var(--text);
-}
-
-.button-content {
-    display: flex;
-    height: 100%;
-    transform: skew(21deg);
-    align-items: center;
-    justify-content: center;
-    
 }

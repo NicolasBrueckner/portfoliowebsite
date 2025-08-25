@@ -4,10 +4,10 @@ import Social from "../components/Socials.astro";
 ---
 
 <header>
-  <div class="navigation-container">
+  <div class="left">
     <Navigation />
   </div>
-  <div class="socials-container">
+  <div class="right">
     <Social />
   </div>
 </header>
@@ -15,29 +15,23 @@ import Social from "../components/Socials.astro";
 <style>
   header {
     height: var(--header-height);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--primary-transparent);
-    padding: 0.4rem;
-    text-align: center;
+    padding: 0 1rem;
     position: fixed;
-    width: 100%;
     z-index: 10;
     box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .navigation-container {
+  .left,
+  .right {
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: start;
-  }
-
-  .socials-container {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: end;
   }
 </style>

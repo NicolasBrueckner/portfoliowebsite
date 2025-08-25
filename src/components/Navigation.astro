@@ -4,21 +4,26 @@ import ButtonShell from "./ButtonShell.astro";
 
 <div class="navigation-root">
     <ButtonShell link="/">
-        <span class="button-content">Home</span>
+        <span>Home</span>
     </ButtonShell>
     <ButtonShell link="/projects">
-        <span class="button-content">Projects</span>
+        <span>Projects</span>
     </ButtonShell>
     <ButtonShell link="/about">
-        <span class="button-content">About</span>
+        <span>About</span>
     </ButtonShell>
 </div>
 
 <style>
     .navigation-root {
         display: flex;
-        height: 100%;
         align-items: center;
         justify-content: center;
+        height: 100%;
+        gap: 0.5rem;
+    }
+
+    .navigation-root span {
+        padding: 0 1.3em;
     }
 </style>

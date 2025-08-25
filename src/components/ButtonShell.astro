@@ -2,16 +2,37 @@
 const { link } = Astro.props;
 ---
 
-<a class="mock-button" href={link}>
+<a class="button-shell" href={link}>
   <slot />
 </a>
 
-<style>
-  .mock-button {
-    height: 100%;
-    padding: 10px;
-    transform: skew(-21deg);
+<style is:global>
+  .button-shell {
+    height: 70%;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 0 0.6em;
+    margin: 0 0.1em;
+    background-color: var(--accent);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 140%;
+    font-weight: 600;
+    transition:
+      background-color 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .button-shell:hover {
+    background-color: var(--secondary-hover);
+    transform: scale(1.05);
+  }
+
+  .button-shell > * {
+    display: flex;
+    fill: var(--text);
+    text-align: center;
   }
 </style>
