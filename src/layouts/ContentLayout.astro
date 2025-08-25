@@ -5,9 +5,7 @@
 <div class="app">
   <div class="background-container"></div>
   <main id="main" class="shell" role="main">
-    <div class="content-container">
-      <slot />
-    </div>
+    <slot />
   </main>
 </div>
 
@@ -27,32 +25,27 @@
     filter: blur(8px);
   }
 
-  .content-container {
-    line-height: 1.6;
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: var(--primary);
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    border-radius: 10px;
-  }
-
   .shell {
     margin-top: calc(var(--header-height) + 10px);
     margin-inline: auto;
+    padding: 0 3%;
     width: 100%;
-    height: calc(100vh - var(--header-height) - 20px);
     max-width: 1700px;
+    max-height: calc(100vh - var(--header-height) - 20px);
     min-inline-size: 72ch;
     position: relative;
     z-index: 1;
     display: flex;
-    overflow-y: hidden;
+    flex-direction: column;
+    overflow-y: auto;
     overflow-x: hidden;
+    scrollbar-width: none;
     box-sizing: border-box;
-    padding: 5px;
-    background-color: var(--accent);
+    background-color: var(--primary);
+    border-style: solid;
+    border-width: 1%;
+    border-color: var(--accent);
     border-radius: 10px;
+    line-height: 1.6;
   }
 </style>
