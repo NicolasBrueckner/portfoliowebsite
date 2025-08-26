@@ -3,6 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-	<h1>Home Page</h1>
-	<p>Welcome to the home page of the website.</p>
+	<div class="shell">
+		<h1>Home Page</h1>
+		<p>Welcome to the home page of the website.</p>
+	</div>
 </BaseLayout>
+
+<style>
+	.shell {
+		margin-top: calc(var(--header-height) + 10px);
+		text-align: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin-inline: auto;
+	}
+</style>

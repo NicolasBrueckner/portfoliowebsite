@@ -29,6 +29,7 @@
     margin-top: calc(var(--header-height) + 10px);
     margin-inline: auto;
     padding: 0 3%;
+    padding-bottom: 10px;
     width: 100%;
     max-width: 1700px;
     max-height: calc(100vh - var(--header-height) - 20px);
@@ -47,5 +48,12 @@
     border-color: var(--accent);
     border-radius: 10px;
     line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-aspect-ratio: 3/4) {
+    .shell {
+      height: calc(100vh - var(--header-height) - 20px);
+    }
   }
 </style>
