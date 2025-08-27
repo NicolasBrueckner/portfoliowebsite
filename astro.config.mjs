@@ -1,1 +1,2 @@
-import { webcore } from 'webcoreui/integration';// @ts-checkimport { defineConfig } from 'astro/config';
+// @ts-check
+import { defineConfig } from 'astro/config';
