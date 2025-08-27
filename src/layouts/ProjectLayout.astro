@@ -1,21 +1,7 @@
 ---
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
-import { Carousel } from "webcoreui/astro";
+import Carousel from "../components/Carousel.astro";
 
 const { title, tagline, folderName } = Astro.props;
-
-const imageImports = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/**/*.{png,jpg}",
-);
-const images = await Promise.all(
-  Object.entries(imageImports)
-    .filter(([path]) => path.includes(folderName))
-    .map(async ([, importImage]) => {
-      const mod = await importImage();
-      return mod.default;
-    }),
-);
 ---
 
 <div class="hero-container">
@@ -23,7 +9,7 @@ const images = await Promise.all(
   <h2>{tagline}</h2>
 </div>
 <div class="carousel-container">
-  {images.map((img) => <Image class="slide" src={img} alt="Image" />)}
+  <Carousel folderName={folderName} />
 </div>
 <div class="description-container">
   <slot />
@@ -54,6 +40,7 @@ const images = await Promise.all(
     height: 50em;
     margin: 10px;
     align-items: center;
+    justify-content: center;
     overflow-x: auto; /* only horizontal scroll */
     overflow-y: hidden; /* prevent vertical overflow */
     padding: 8px;
