@@ -1,15 +1,12 @@
 ---
+import ContentLayout from "../layouts/ContentLayout.astro";
 import Skillset from "../components/Skillset.astro";
 import Experience from "../components/Experience.astro";
 import Separator from "../components/Separator.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ContentLayout from "../layouts/ContentLayout.astro";
 ---
 
-<BaseLayout>
-  <ContentLayout>
-    <Skillset />
-    <Separator thickness={3} margin="50px" length="75%" color="var(--accent)" />
-    <Experience />
-  </ContentLayout>
-</BaseLayout>
+<ContentLayout>
+  <Skillset />
+  <Separator thickness={3} margin="50px" length="75%" color="var(--accent)" />
+  <Experience />
+</ContentLayout>

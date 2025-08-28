@@ -1,19 +1,24 @@
 .carousel {
   position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  width: 100%; /* or 100% if you want responsive width */
 }
 
 .slides {
   display: grid;
-  gap: 8px;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   transition: transform 0.5s ease;
 }
 
 .slides img {
-  width: 100%;
+  width: 95%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 button.prev,
@@ -21,19 +26,28 @@ button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: var(--primary-transparent);
   border: none;
-  padding: 8px 12px;
-  font-size: 1.5rem;
+  width: 2.5em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+  color: var(--text);
   cursor: pointer;
   z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
 }
 
+
 button.prev {
-  left: 10px;
+  left: 2%;
 }
 
 button.next {
-  right: 10px;
+  right: 2%;
 }

@@ -1,13 +1,15 @@
 ---
-
+import BaseLayout from "./BaseLayout.astro";
 ---
 
-<div class="app">
-  <div class="background-container"></div>
-  <main id="main" class="shell" role="main">
-    <slot />
-  </main>
-</div>
+<BaseLayout>
+  <div class="app">
+    <div class="background-container"></div>
+    <main id="main" class="shell" role="main">
+      <slot />
+    </main>
+  </div>
+</BaseLayout>
 
 <style>
   .app {
