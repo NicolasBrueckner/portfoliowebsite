@@ -37,7 +37,7 @@ const images = fs
     <slot name="description" />
   </div>
   <div>
-    <a href={link}>
+    <a href={link} class="link-container">
       <slot name="link" />
     </a>
   </div>
@@ -59,6 +59,8 @@ const images = fs
     min-height: 15em;
     margin: 10px;
     margin-top: 0;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
   }
 
   .carousel-container {
@@ -79,5 +81,6 @@ const images = fs
   }
 
   .link-container {
+    text-decoration: none;
   }
 </style>
