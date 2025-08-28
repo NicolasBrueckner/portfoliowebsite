@@ -11,11 +11,12 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+  place-items: center;
   transition: transform 0.5s ease;
 }
 
 .slides img {
-  width: 95%;
+  width: 97%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
