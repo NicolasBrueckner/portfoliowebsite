@@ -7,7 +7,7 @@ folderName: "adventure_island"
 link: ""
 linkText: ""
 colorFrom: "#79784a"
-colorTo: "#6994ffX"
+colorTo: "#79784a"
 ---
 
 Adventure Island was my first academic group project, involving a team of

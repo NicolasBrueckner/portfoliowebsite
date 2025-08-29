@@ -5,7 +5,8 @@
     --primary: rgb(248, 243, 217);
     --primary-transparent: rgba(248, 243, 217, 0.25);
     --secondary: rgb(235, 229, 194);
-    --secondary-hover: rgb(205, 199, 164);
+    --secondary-transparent: rgba(235, 229, 194, 0.5);
+    --secondary-hover: rgb(220, 214, 179);
     --accent: rgb(185, 178, 138);
     --text: rgb(80, 75, 56);
     
