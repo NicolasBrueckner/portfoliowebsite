@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+
+const { pagetitle } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout pagetitle={pagetitle}>
   <div class="app">
     <div class="background-container"></div>
     <main id="main" class="shell" role="main">

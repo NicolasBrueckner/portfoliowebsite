@@ -6,39 +6,44 @@ import Separator from "../components/Separator.astro";
 import fs from "fs";
 import path from "path";
 
-const {
-  title,
-  tagline,
-  folderName,
-  link,
-  heroColorFrom = "var(--primary)",
-  heroColorTo = "var(--accent)",
-} = Astro.props;
+const { frontmatter } = Astro.props;
 
-const imagesDir = path.join(process.cwd(), "public", folderName);
+const imagesDir = path.join(
+  process.cwd(),
+  "public",
+  "project_images",
+  frontmatter.folderName,
+);
+
 const images = fs
   .readdirSync(imagesDir)
-  .map((file) => `/${folderName}/${file}`);
+  .filter((f) => /\.(png|jpe?g|webp|gif|svg)$/i.test(f))
+  .map((file) => `/project_images/${frontmatter.folderName}/${file}`);
 ---
 
-<ContentLayout>
+<ContentLayout pagetitle=`Projects/${frontmatter.title}`>
   <div
     class="hero-container"
-    style={`background: linear-gradient(${heroColorFrom}, ${heroColorTo})`}
+    style={`background: linear-gradient(${frontmatter.colorFrom}, ${frontmatter.colorTo})`}
   >
-    <h1>{title}</h1>
-    <h2>{tagline}</h2>
+    <h1>{frontmatter.title}</h1>
+    <h2>{frontmatter.tagline}</h2>
   </div>
   <div class="carousel-container">
     <Carousel images={images} visibleCount={3} client:load />
   </div>
   <Separator thickness={3} margin="50px" length="75%" color="var(--accent)" />
   <div class="description-container">
-    <slot name="description" />
+    <slot />
   </div>
   <div>
-    <a href={link} class="link-container">
-      <slot name="link" />
+    <a
+      href={frontmatter.link}
+      class="link-container"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {frontmatter.linkText}
     </a>
   </div>
 </ContentLayout>

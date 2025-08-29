@@ -1,67 +1,46 @@
 ---
+const { title, tagline, href, folderName } = Astro.props;
 
+const cover = `/project_images/${folderName}/cover.png`;
 ---
 
-<div class="item-root">
-  <h1>Title</h1>
-  <h2>Tagline</h2>
-  <div class="text-container">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis tempus
-      erat. Sed vehicula, tellus eget varius lobortis, nibh metus eleifend
-      dolor, ac tempus felis elit a diam. Vestibulum mollis dolor vitae mi
-      pulvinar, eget consequat ligula scelerisque. Donec quis elementum eros, in
-      venenatis elit. Cras semper, risus maximus molestie efficitur, sem diam
-      volutpat ex, sit amet tempor odio dolor quis ex. Fusce rutrum sollicitudin
-      fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-      quis tempus erat. Sed vehicula, tellus eget varius lobortis, nibh metus
-      eleifend dolor, ac tempus felis elit a diam. Vestibulum mollis dolor vitae
-      mi pulvinar, eget consequat ligula scelerisque. Donec quis elementum eros,
-      in venenatis elit. Cras semper, risus maximus molestie efficitur, sem diam
-      volutpat ex, sit amet tempor odio dolor quis ex. Fusce rutrum sollicitudin
-      fermentum.
-    </p>
-    <p class="read-more">
-      <a href="/projects/testprojectpage" class="button">Read More</a>
-    </p>
-  </div>
-</div>
+<a href={href} class="item-root">
+  <img src={cover} alt={title} class="cover" />
+  <h1>{title}</h1>
+  <h2>{tagline}</h2>
+</a>
 
 <style>
   .item-root {
-    width: 90%;
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--accent);
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 1.6em 3em;
-    padding-bottom: 0%;
-    margin-inline: auto;
-  }
-
-  .text-container {
-    position: relative;
-    max-height: 5em;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
   }
 
-  .text-container .read-more {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .item-root:hover {
+    transform: translateY(-4px);
+  }
+
+  .cover {
     width: 100%;
-    text-align: center;
-    align-items: end;
-    justify-content: end;
-    margin: 0;
-    padding: 0 0;
-    background: linear-gradient(to bottom, transparent, white);
+    height: 200px;
+    object-fit: cover;
   }
 
-  .read-more:hover {
-    color: var(--accent);
+  h1 {
+    font-size: 1.2rem;
+    margin: 0.5em 1em 0 1em;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0 1em 1em 1em;
+    color: var(--text-muted);
   }
 </style>

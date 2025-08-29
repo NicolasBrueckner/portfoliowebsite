@@ -1,13 +1,15 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+
+const { pagetitle } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>My Portfolio</title>
+    <title>{pagetitle}</title>
     <link rel="icon" href="/pageicon.png" />
   </head>
   <body>
