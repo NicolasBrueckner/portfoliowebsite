@@ -17,7 +17,7 @@ const imagesDir = path.join(
 
 const images = fs
   .readdirSync(imagesDir)
-  .filter((f) => /\.(png|jpe?g|webp|gif|svg)$/i.test(f))
+  .filter((f) => /\.(png|jpe?g|webp|gif|svg)$/i.test(f) && !/^cover\./i.test(f))
   .map((file) => `/project_images/${frontmatter.folderName}/${file}`);
 ---
 
