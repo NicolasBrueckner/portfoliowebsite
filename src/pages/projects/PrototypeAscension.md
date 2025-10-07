@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
 
+date: 2024-09-01
 title: "Prototype Ascension"
 tagline: "A small game where you try to scale a deadly tower as fast as possible"
 folderName: "prototype_ascension"
 link: "https://nicolasbrueckner.itch.io/prototype-ascension"
 linkText: "Play it on itch.io"
-colorFrom: "#a2e0b1"
-colorTo: "#569291"
+colorFrom: "var(--secondary)"
+colorTo: "var(--accent)"
 ---
 
 In this game, players ascend a tower as a spherical drone capable of

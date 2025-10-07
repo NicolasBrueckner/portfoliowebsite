@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
 
+date: 2020-10-01
 title: "Adventure Island"
 tagline: "Explore the season islands and solve their gripping puzzles"
 folderName: "adventure_island"
 link: ""
 linkText: ""
-colorFrom: "#79784a"
-colorTo: "#79784a"
+colorFrom: "var(--secondary)"
+colorTo: "var(--accent)"
 ---
 
 Adventure Island was my first academic group project, involving a team of

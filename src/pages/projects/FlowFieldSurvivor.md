@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
 
+date: 2024-03-01
 title: "Flow Field Survivor"
 tagline: "Experiment to incorporate sophisticated pathfinding into the Survivor-Like Genre"
 folderName: "flow_field_survivor"
 link: "https://nicolasbrueckner.itch.io/flow-field-survivors"
 linkText: "Download it on itch.io"
-colorFrom: "#7fa1b4"
-colorTo: "#6f827b"
+colorFrom: "var(--secondary)"
+colorTo: "var(--accent)"
 ---
 
 This project was inspired by games like Vampire Survivors and drew heavily

@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
 
+date: 2022-10-01
 title: "Allgäu Jump"
 tagline: "Be the first on top of the mountain and leave your oppenents in the dirt"
 folderName: "allgaeu_jump"
 link: ""
 linkText: ""
-colorFrom: "#4c9955"
-colorTo: "#332610"
+colorFrom: "var(--secondary)"
+colorTo: "var(--accent)"
 ---
 
 Towards the end of my studies, I collaborated with three peers on a group

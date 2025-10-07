@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
 
+date: 2025-05-01
 title: "Three Body Simulation"
 tagline: "The chaotic interaction of a three body system visualized in a compact app"
 folderName: "three_body_simulation"
 link: ""
 linkText: ""
-colorFrom: "white"
-colorTo: "black"
+colorFrom: "var(--secondary)"
+colorTo: "var(--accent)"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in erat

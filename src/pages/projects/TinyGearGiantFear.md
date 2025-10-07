@@ -1,13 +1,14 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
 
+date: 2025-03-01
 title: "Tiny Gear, Giant Fear"
 tagline: "Run away from certain destruction but beware of obstacles"
 folderName: "tiny_gear_giant_fear"
 link: "https://z3r0strike.itch.io/tiny-gear-giant-fear-reupload"
 linkText: "Play it on itch.io"
-colorFrom: "#bdb8b9"
-colorTo: "#3b414d"
+colorFrom: "var(--secondary)"
+colorTo: "var(--accent)"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in erat

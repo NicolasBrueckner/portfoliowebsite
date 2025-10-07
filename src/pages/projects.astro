@@ -2,13 +2,30 @@
 import ContentLayout from "../layouts/ContentLayout.astro";
 import ProjectItem from "../components/ProjectItem.astro";
 
-const projects = await Astro.glob("./projects/*.md");
+type ProjectFrontmatter = {
+  title: string;
+  tagline: string;
+  folderName: string;
+  colorTo: string;
+  date: string;
+};
+
+const projects = (await Astro.glob("./projects/*.md")) as Array<{
+  frontmatter: ProjectFrontmatter;
+  url: string;
+}>;
+
+const sortedProjects = projects.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date ?? 0).getTime() -
+    new Date(a.frontmatter.date ?? 0).getTime(),
+);
 ---
 
 <ContentLayout pagetitle="Projects">
   <div class="grid">
     {
-      projects.map((p) => (
+      sortedProjects.map((p) => (
         <ProjectItem
           title={p.frontmatter.title}
           tagline={p.frontmatter.tagline}
