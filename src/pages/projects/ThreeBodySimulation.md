@@ -11,23 +11,8 @@ colorFrom: "var(--secondary)"
 colorTo: "var(--accent)"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in erat
-vel leo ultricies pharetra sed quis justo. Suspendisse pulvinar, orci ac
-ornare lacinia, turpis nulla consequat mauris, a ornare orci lorem nec
-diam. Nam sagittis magna et velit accumsan, non ultrices odio lacinia.
-Maecenas tristique lectus pulvinar nibh sollicitudin, eu tristique est
-laoreet. Donec sed leo massa. Pellentesque habitant morbi tristique
-senectus et netus et malesuada fames ac turpis egestas. Vestibulum eget
-felis molestie, tincidunt nisl vel, gravida augue. In sed lacus ut nisi
-scelerisque congue sed vel urna. Phasellus rhoncus venenatis pellentesque.
-Sed mattis, turpis nec vestibulum aliquam, purus velit suscipit eros, nec
-vulputate arcu arcu id dui. Quisque venenatis ex placerat lacus vehicula,
-eget eleifend lectus tempus. Curabitur id dolor lectus. Cras ac tortor ac
-nunc venenatis pretium nec id augue. Suspendisse condimentum vehicula
-augue id volutpat. Maecenas ultricies risus viverra tortor vestibulum
-dictum vel eu massa. Nunc lobortis cursus aliquam. Sed efficitur elementum
-venenatis. Proin molestie faucibus mauris, vel congue ligula faucibus at.
-Donec a convallis diam. Vivamus felis nulla, tincidunt non hendrerit et,
-elementum quis odio. Ut sit amet nisi condimentum, interdum mi quis,
-volutpat nulla. Nam consectetur laoreet dictum. Maecenas commodo odio
-nulla, maximus tincidunt nisi cursus et.
+The n-body problem is a interesting physical scenario in which multiple gravitational bodies exert forces on one another. In certain cases, these interactions can result in stable behavior, where the system returns to its initial state over time. Due to the chaotic nature of n-body systems, such initial conditions can't be directly calculated—they must instead be discovered through simulation, a process sometimes referred to as hunting for stable n-body orbits.
+
+This project didn't aim to find new orbits but rather to compile the vast number of stable solutions that have already been discovered, simulate them in real time, and present them in an engaging visual format. I was inspired to take on this project by the work of Ricky Reusser and his blog on the same subject.
+
+The resulting app provides users with a central hub to explore a variety of stable orbits, illustrated using custom shaders and a clean, user-friendly interface. The orbit calculation algorithm is based on Ricky Reusser’s original code, particularly the time integration method he developed for one of his earlier projects.

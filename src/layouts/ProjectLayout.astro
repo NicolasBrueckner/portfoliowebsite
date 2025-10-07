@@ -78,13 +78,20 @@ const images = fs
 
   .description-container {
     background-color: var(--primary);
-    display: flex;
     width: 90%;
     margin: 10px;
     text-align: justify;
+    font-size: 1.2rem;
   }
 
   .link-container {
     text-decoration: none;
+  }
+</style>
+
+<style is:global>
+  .description-container p {
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 </style>
