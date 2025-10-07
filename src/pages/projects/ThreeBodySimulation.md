@@ -5,8 +5,8 @@ date: 2025-05-01
 title: "Three Body Simulation"
 tagline: "The chaotic interaction of a three body system visualized in a compact app"
 folderName: "three_body_simulation"
-link: ""
-linkText: ""
+link: "https://nicolasbrueckner.itch.io/three-body-simulation"
+linkText: "Play or download it on itch.io"
 colorFrom: "var(--secondary)"
 colorTo: "var(--accent)"
 ---

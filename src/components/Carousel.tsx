@@ -1,5 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/carousel.css";
+import "glightbox/dist/css/glightbox.css";
+import GLightbox from "glightbox";
+
+if (typeof window !== "undefined") {
+  setTimeout(() => GLightbox({ touchNavigation: true, loop: true }), 0);
+}
+
 
 
 export default function Carousel({
@@ -10,9 +17,13 @@ export default function Carousel({
   visibleCount?: number;
 }) {
   const iSize = "70%"
-
   const [current, setCurrent] = useState(0);
   const maxIndex = Math.max(images.length - visibleCount, 0);
+
+  useEffect(() => {
+    const lightbox = GLightbox({ touchNavigation: true, loop: true, selector: '.glightbox' });
+    return () => lightbox.destroy();
+  }, []);
 
   const nextSlide = () =>
     setCurrent((current + 1) > maxIndex ? 0 : current + 1);
@@ -30,7 +41,9 @@ export default function Carousel({
         }}
       >
         {images.map((src, i) => (
-          <img key={i} src={src} alt={`Slide ${i + 1}`} />
+          <a key={i} href={src} className="glightbox" data-gallery="carousel">
+            <img key={i} src={src} alt={`Slide ${i + 1}`} />
+          </a>
         ))}
       </div>
       <button className="prev" onClick={prevSlide}><LeftIcon width={iSize} height={iSize}/></button>

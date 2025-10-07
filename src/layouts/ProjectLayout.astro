@@ -30,7 +30,7 @@ const images = fs
     <h2>{frontmatter.tagline}</h2>
   </div>
   <div class="carousel-container">
-    <Carousel images={images} visibleCount={3} client:load />
+    <Carousel images={images} visibleCount={3} client:only="react" />
   </div>
   <Separator thickness={3} margin="50px" length="75%" color="var(--accent)" />
   <div class="description-container">

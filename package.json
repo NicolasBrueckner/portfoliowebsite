@@ -13,6 +13,7 @@
     "@types/react": "^19.1.11",
     "@types/react-dom": "^19.1.8",
     "astro": "^5.13.2",
+    "glightbox": "^3.3.1",
     "normalize.css": "^8.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
