@@ -11,23 +11,6 @@ colorFrom: "var(--secondary)"
 colorTo: "var(--accent)"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in erat
-vel leo ultricies pharetra sed quis justo. Suspendisse pulvinar, orci ac
-ornare lacinia, turpis nulla consequat mauris, a ornare orci lorem nec
-diam. Nam sagittis magna et velit accumsan, non ultrices odio lacinia.
-Maecenas tristique lectus pulvinar nibh sollicitudin, eu tristique est
-laoreet. Donec sed leo massa. Pellentesque habitant morbi tristique
-senectus et netus et malesuada fames ac turpis egestas. Vestibulum eget
-felis molestie, tincidunt nisl vel, gravida augue. In sed lacus ut nisi
-scelerisque congue sed vel urna. Phasellus rhoncus venenatis pellentesque.
-Sed mattis, turpis nec vestibulum aliquam, purus velit suscipit eros, nec
-vulputate arcu arcu id dui. Quisque venenatis ex placerat lacus vehicula,
-eget eleifend lectus tempus. Curabitur id dolor lectus. Cras ac tortor ac
-nunc venenatis pretium nec id augue. Suspendisse condimentum vehicula
-augue id volutpat. Maecenas ultricies risus viverra tortor vestibulum
-dictum vel eu massa. Nunc lobortis cursus aliquam. Sed efficitur elementum
-venenatis. Proin molestie faucibus mauris, vel congue ligula faucibus at.
-Donec a convallis diam. Vivamus felis nulla, tincidunt non hendrerit et,
-elementum quis odio. Ut sit amet nisi condimentum, interdum mi quis,
-volutpat nulla. Nam consectetur laoreet dictum. Maecenas commodo odio
-nulla, maximus tincidunt nisi cursus et.
+This game was created for Puls Game Jam 2025 in a group of four within 72 hours. The theme for this jam was "kaputt". You play a tiny robot that is actively falling apart and have to manage your health while fleeing from a giant robot that wants to destroy you. The goal is to reach the end of the track without getting scrapped. To achieve this, the player has different abilities to their disposal which can be used according to their respective cooldowns.
+
+I was responsible for most of the coding done in this project ranging from the level generation to the player movement and ability logic. I also worked on particle effects as well as the rendering part. Creating a finished product within such a short time frame is never easy but it gets better with experience. This was one of the first jams that I would consider more or less successful, having a playable game, that looks and feels decent enough and got a relatively good rating.

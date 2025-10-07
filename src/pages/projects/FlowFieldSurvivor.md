@@ -11,12 +11,4 @@ colorFrom: "var(--secondary)"
 colorTo: "var(--accent)"
 ---
 
-This project was inspired by games like Vampire Survivors and drew heavily
-from that genre. It was developed as part of my bachelor’s thesis, which
-focused on implementing flow field pathfinding in a similar game style.
-The game includes genre-specific elements such as a plethora of enemies, a
-variety of combinable weapons, and a structured leveling system. Although
-the primary aim was research rather than gameplay, I personally designed
-all assets and systems. In retrospect, this approach might not have been
-the most suitable for a scientific study, but it provided a substantial
-learning experience.
+This project was inspired by games like Vampire Survivors and drew heavily from that genre. It was developed as part of my bachelor’s thesis, which focused on implementing flow field pathfinding in a similar game style. The game includes genre-specific elements such as a plethora of enemies, a variety of combinable weapons, and a structured leveling system. Although the primary aim was research rather than gameplay, I personally designed all assets and systems. In retrospect, this approach might not have been the most suitable for a scientific study, but it provided a substantial learning experience.
