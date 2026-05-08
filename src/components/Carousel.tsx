@@ -42,7 +42,7 @@ export default function Carousel({
       >
         {images.map((src, i) => (
           <a key={i} href={src} className="glightbox" data-gallery="carousel">
-            <img key={i} src={src} alt={`Slide ${i + 1}`} />
+            <img key={i} src={src} alt={`Slide ${i + 1}`} loading="lazy" decoding="async" />
           </a>
         ))}
       </div>

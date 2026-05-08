@@ -3,12 +3,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pagetitle="Home">
-	<div class="video-container">
-		<video autoplay loop muted playsinline>
-			<source src="/WeepingWillow.webm" type="video/webm" />
-			<source src="/WeepingWillow.mp4" type="video/mp4" />
+	<div class="video-container" id="bg-container">
+		<video id="bg-video" autoplay loop muted playsinline>
 		</video>
 	</div>
+	<script>
+		(function () {
+			const nav = navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } };
+			const conn = nav.connection;
+			const effectiveType = conn?.effectiveType;
+			const saveData = conn?.saveData;
+
+			if (effectiveType === "slow-2g" || saveData) {
+				const container = document.getElementById("bg-container") as HTMLElement | null;
+				const video = document.getElementById("bg-video") as HTMLVideoElement | null;
+				if (container) container.style.backgroundImage = "url('/WeepingWillowFallback.png')";
+				if (video) video.remove();
+				return;
+			}
+
+			const video = document.getElementById("bg-video") as HTMLVideoElement | null;
+			if (!video) return;
+			const src = effectiveType === "2g" ? "/WeepingWillow_lowquality.webm" : "/WeepingWillow.webm";
+			const source = document.createElement("source");
+			source.src = src;
+			source.type = "video/webm";
+			video.appendChild(source);
+			video.load();
+		})();
+	</script>
 </BaseLayout>
 
 <style>
@@ -18,6 +41,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		width: 100%;
 		height: 100%;
 		z-index: 0;
+		background-size: cover;
+		background-position: center;
 	}
 
 	.video-container video {

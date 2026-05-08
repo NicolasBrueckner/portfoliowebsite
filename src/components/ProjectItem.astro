@@ -1,10 +1,11 @@
 ---
+import { Image } from "astro:assets";
 const { title, tagline, href, folderName, colorTo } = Astro.props;
 const cover = `/project_images/${folderName}/cover.png`;
 ---
 
 <a href={href} class="item-root">
-  <img src={cover} alt={title} class="cover" />
+  <Image src={cover} alt={title} width={800} height={500} class="cover" />
   <div class="banner" style={`--accent-to: ${colorTo}`}>
     <h1>{title}</h1>
     <h2>{tagline}</h2>
