@@ -34,4 +34,10 @@ const { date, company, location, role } = Astro.props;
     text-align: center;
     padding: 0 5%;
   }
+
+  @media (max-width: 640px) {
+    .container.grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
