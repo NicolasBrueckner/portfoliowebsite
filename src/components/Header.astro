@@ -21,6 +21,8 @@ import Social from "../components/Socials.astro";
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 0 1rem;
     position: fixed;
     z-index: 10;
@@ -33,5 +35,21 @@ import Social from "../components/Socials.astro";
     display: flex;
     height: 100%;
     align-items: center;
+  }
+
+  @media (max-width: 640px) {
+    header {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .left,
+    .right {
+      height: auto;
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>

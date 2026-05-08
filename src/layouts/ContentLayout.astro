@@ -59,4 +59,12 @@ const { pagetitle } = Astro.props;
       height: calc(100vh - var(--header-height) - 20px);
     }
   }
+
+  @media (max-width: 640px) {
+    .shell {
+      min-inline-size: 0;
+      padding: 0 1rem;
+      border-radius: 6px;
+    }
+  }
 </style>
