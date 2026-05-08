@@ -10,10 +10,12 @@ type ProjectFrontmatter = {
   date: string;
 };
 
-const projects = (await Astro.glob("./projects/*.md")) as Array<{
+const projectFiles = import.meta.glob<{
   frontmatter: ProjectFrontmatter;
   url: string;
-}>;
+}>("./projects/*.md", {eager: true});
+
+const projects = Object.values(projectFiles);
 
 const sortedProjects = projects.sort(
   (a, b) =>

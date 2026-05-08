@@ -17,7 +17,7 @@
 
 .slides img {
   width: 97%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
