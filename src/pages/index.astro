@@ -3,48 +3,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pagetitle="Home">
-	<div class="shell">
-		<div class="wip-container">
-			<img src="/wip.jpg" alt="Work In Progress" width="900" />
-			<p style="width: 60ch; margin: 0 auto; font-size: 1.5rem;">
-				To this frontpage will be added a small demo scene running in the
-				browser. Right now, you can still check out my work at <a
-					href="/projects">the projects page</a
-				> or my skillset and experience at <a href="/about">the about page</a>.
-			</p>
-		</div>
+	<div class="video-container">
+		<video autoplay loop muted playsinline>
+			<source src="/WeepingWillow.webm" type="video/webm" />
+			<source src="/WeepingWillow.mp4" type="video/mp4" />
+		</video>
 	</div>
 </BaseLayout>
 
 <style>
-	.shell {
-		margin-top: calc(var(--header-height) + 10px);
-		text-align: center;
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		margin-inline: auto;
-	}
-	.wip-container {
-		margin-top: 2rem;
-		padding: 3rem;
-		align-items: center;
-		justify-content: center;
-		color: var(--text);
-		text-align: center;
-		border: 2px dashed var(--accent);
-		margin-inline: auto;
-		border-radius: 8px;
-		background-color: var(--secondary-transparent);
+	.video-container {
+		position: fixed;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
 	}
 
-	.wip-container img {
-		display: block;
-		margin: 0 auto;
-		margin-bottom: 1.5rem;
-		border-radius: 8px;
-		max-width: 100%;
-		height: auto;
-		box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.15);
+	.video-container video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 </style>
