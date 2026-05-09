@@ -11,7 +11,7 @@ const covers = import.meta.glob<{ default: ImageMetadata }>(
 const cover = covers[`/src/assets/project_images/${folderName}/cover.png`]?.default;
 ---
 
-<a href={href} class="item-root">
+<a href={href} class="item-root" target="_blank" rel="noopener noreferrer">
   <Image src={cover} alt={title} width={800} height={500} class="cover" />
   <div class="banner" style={`--accent-to: ${colorTo}`}>
     <h1>{title}</h1>
