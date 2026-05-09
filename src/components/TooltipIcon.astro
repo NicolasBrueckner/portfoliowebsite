@@ -1,6 +1,4 @@
 ---
-import "../styles/global.css";
-
 export interface Props {
     name: string;
     icon: string;
@@ -12,7 +10,7 @@ const { name, icon, url } = Astro.props;
 
 {
     url ? (
-        <a href={url} class="container">
+        <a href={url} class="container" target="_blank" rel="noopener noreferrer">
             <img
                 class="icon"
                 src={icon}
@@ -43,6 +41,7 @@ const { name, icon, url } = Astro.props;
         padding: 5px;
         position: relative;
         font-weight: bolder;
+        text-decoration: none;
     }
 
     .icon {
@@ -66,11 +65,18 @@ const { name, icon, url } = Astro.props;
         transition: all 0.3s ease;
         font-weight: bolder;
         z-index: 2;
+        white-space: nowrap;
     }
 
-    .container:hover .tooltip-text {
+    .container:hover .tooltip-text,
+    .container:focus-visible .tooltip-text {
         opacity: 1;
         visibility: visible;
         top: -50px;
+    }
+
+    .container:focus-visible {
+        outline: 2px solid var(--accent);
+        border-radius: 5px;
     }
 </style>

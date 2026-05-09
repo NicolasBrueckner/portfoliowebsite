@@ -9,6 +9,10 @@ const { pagetitle } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Nicolas Brückner — game developer and software engineer." />
+    <meta property="og:title" content={pagetitle} />
+    <meta property="og:description" content="Portfolio of Nicolas Brückner — game developer and software engineer." />
+    <meta property="og:type" content="website" />
     <title>{pagetitle}</title>
     <link rel="icon" href="/pageicon.png" />
   </head>

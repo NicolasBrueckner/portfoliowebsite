@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout pagetitle="Home">
 	<div class="video-container" id="bg-container">
-		<video id="bg-video" autoplay loop muted playsinline>
+		<video id="bg-video" autoplay loop muted playsinline poster="/WeepingWillowFallback.png">
 		</video>
 	</div>
 	<script>
@@ -24,7 +24,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 			const video = document.getElementById("bg-video") as HTMLVideoElement | null;
 			if (!video) return;
-			const src = effectiveType === "2g" ? "/WeepingWillow_lowquality.webm" : "/WeepingWillow.webm";
+			const src = (effectiveType === "2g" || effectiveType === "3g") ? "/WeepingWillow_lowquality.webm" : "/WeepingWillow.webm";
 			const source = document.createElement("source");
 			source.src = src;
 			source.type = "video/webm";

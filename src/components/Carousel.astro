@@ -1,0 +1,145 @@
+---
+import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  images: ImageMetadata[];
+  visibleCount?: number;
+}
+const { images, visibleCount = 1 } = Astro.props;
+
+const thumbnails = await Promise.all(
+  images.map((img) => getImage({ src: img, format: "webp", width: 800 }))
+);
+const fullsize = await Promise.all(
+  images.map((img) => getImage({ src: img, format: "webp" }))
+);
+---
+
+<div
+  class="carousel"
+  data-visible={visibleCount}
+  style={`--cols: ${thumbnails.length}; --visible: ${visibleCount}`}
+>
+  <div class="slides">
+    {thumbnails.map((thumb, i) => (
+      <a href={fullsize[i].src} class="glightbox" data-gallery="carousel">
+        <img
+          src={thumb.src}
+          {...thumb.attributes}
+          alt={`Project image ${i + 1}`}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    ))}
+  </div>
+  <button class="prev" aria-label="Previous slide">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="30.08 24.98 128.78 300.03" width="70%" height="70%">
+      <path fill="currentColor" d="M301.179 521.701c-3.015 7.225-3.015 14.45 0 21.675l63.232 128.311c-2.409 6.03-7.529 9.946-15.36 11.748a13789.754 13789.754 0 0 0-52.395-68.223c-17.464-22.594-35.84-45.335-55.124-68.224-7.832-9.633-7.832-18.972 0-28.017 19.285-22.888 37.66-45.477 55.124-67.768a6689.84 6689.84 0 0 0 52.395-67.768c7.831 1.214 12.951 5.13 15.36 11.747l-63.232 126.52z" transform="translate(-205.555 -358.435)"/>
+    </svg>
+  </button>
+  <button class="next" aria-label="Next slide">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="30.08 24.98 128.82 300.03" width="70%" height="70%">
+      <path fill="currentColor" d="M298.918 521.701c3.015 7.225 3.015 14.45 0 21.675l-63.26 128.311c2.409 6.03 7.529 9.946 15.36 11.748a15032.33 15032.33 0 0 1 52.422-68.223c17.465-22.594 35.84-45.335 55.125-68.224 7.832-9.633 7.832-18.972 0-28.017-19.285-22.888-37.66-45.477-55.125-67.768a6971.29 6971.29 0 0 1-52.422-67.768c-7.831 1.214-12.951 5.13-15.36 11.747l63.26 126.52z" transform="translate(-205.555 -358.435)"/>
+    </svg>
+  </button>
+</div>
+
+<style is:global>
+  @import "glightbox/dist/css/glightbox.css";
+</style>
+
+<style>
+  .carousel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(var(--cols, 1), calc(100% / var(--visible, 1)));
+    place-items: center;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .slides img {
+    width: 97%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  button.prev,
+  button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-transparent);
+    border: none;
+    width: 2.5em;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+
+  button.prev { left: 2%; }
+  button.next { right: 2%; }
+
+  button.prev:hover,
+  button.next:hover {
+    background: var(--secondary-transparent);
+  }
+
+  button.prev:focus-visible,
+  button.next:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  button.prev:active,
+  button.next:active {
+    transform: translateY(-50%) scale(0.93);
+  }
+</style>
+
+<script>
+  import GLightbox from "glightbox";
+
+  GLightbox({ touchNavigation: true, loop: true, selector: ".glightbox" });
+
+  document.querySelectorAll<HTMLElement>(".carousel[data-visible]").forEach((carousel) => {
+    const slides = carousel.querySelector<HTMLElement>(".slides")!;
+    const visibleCount = parseInt(carousel.dataset.visible ?? "1");
+    const total = carousel.querySelectorAll(".glightbox").length;
+    const maxIndex = Math.max(total - visibleCount, 0);
+    let current = 0;
+
+    function update() {
+      slides.style.transform = `translateX(-${(current * 100) / visibleCount}%)`;
+    }
+
+    carousel.querySelector(".next")?.addEventListener("click", () => {
+      current = current + 1 > maxIndex ? 0 : current + 1;
+      update();
+    });
+
+    carousel.querySelector(".prev")?.addEventListener("click", () => {
+      current = current - 1 < 0 ? maxIndex : current - 1;
+      update();
+    });
+  });
+</script>
