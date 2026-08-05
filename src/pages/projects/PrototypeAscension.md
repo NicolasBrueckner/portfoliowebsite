@@ -7,8 +7,6 @@ tagline: "A small game where you try to scale a deadly tower as fast as possible
 folderName: "prototype_ascension"
 link: "https://nicolasbrueckner.itch.io/prototype-ascension"
 linkText: "Play it on itch.io"
-colorFrom: "var(--secondary)"
-colorTo: "var(--accent)"
 ---
 
 In this game, players ascend a tower as a spherical drone capable of

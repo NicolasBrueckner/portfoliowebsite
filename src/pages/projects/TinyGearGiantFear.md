@@ -7,8 +7,6 @@ tagline: "Run away from certain destruction but beware of obstacles"
 folderName: "tiny_gear_giant_fear"
 link: "https://z3r0strike.itch.io/tiny-gear-giant-fear-reupload"
 linkText: "Play it on itch.io"
-colorFrom: "var(--secondary)"
-colorTo: "var(--accent)"
 ---
 
 This game was created for Puls Game Jam 2025 in a group of four within 72 hours. The theme for this jam was "kaputt". You play a tiny robot that is actively falling apart and have to manage your health while fleeing from a giant robot that wants to destroy you. The goal is to reach the end of the track without getting scrapped. To achieve this, the player has different abilities to their disposal which can be used according to their respective cooldowns.

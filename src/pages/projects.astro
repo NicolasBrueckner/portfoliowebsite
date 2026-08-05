@@ -6,7 +6,6 @@ type ProjectFrontmatter = {
   title: string;
   tagline: string;
   folderName: string;
-  colorTo: string;
   date: string;
 };
 
@@ -33,7 +32,6 @@ const sortedProjects = projects.sort(
           tagline={p.frontmatter.tagline}
           href={p.url}
           folderName={p.frontmatter.folderName}
-          colorTo={p.frontmatter.colorTo}
         />
       ))
     }

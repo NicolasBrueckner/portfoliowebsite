@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
-const { title, tagline, href, folderName, colorTo } = Astro.props;
+const { title, tagline, href, folderName } = Astro.props;
 
 const covers = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/project_images/*/cover.png",
@@ -13,7 +13,7 @@ const cover = covers[`/src/assets/project_images/${folderName}/cover.png`]?.defa
 
 <a href={href} class="item-root">
   <Image src={cover} alt={title} width={800} height={500} class="cover" />
-  <div class="banner" style={`--accent-to: ${colorTo}`}>
+  <div class="banner">
     <h1>{title}</h1>
   </div>
 </a>
@@ -53,7 +53,7 @@ const cover = covers[`/src/assets/project_images/${folderName}/cover.png`]?.defa
     background: linear-gradient(
       to bottom right,
       var(--secondary-transparent),
-      var(--accent-to)
+      var(--accent)
     );
   }
 

@@ -2,6 +2,7 @@
 import ContentLayout from "./ContentLayout.astro";
 import Carousel from "../components/Carousel.astro";
 import Separator from "../components/Separator.astro";
+import { Image } from "astro:assets";
 
 import type { ImageMetadata } from "astro";
 
@@ -16,15 +17,25 @@ const images: ImageMetadata[] = Object.entries(allImages)
   .filter(([p]) => p.includes(`/${frontmatter.folderName}/`) && !/\/cover\.[^/]+$/i.test(p))
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([, mod]) => mod.default);
+
+const covers = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/project_images/*/cover.png",
+  { eager: true }
+);
+const cover = covers[`/src/assets/project_images/${frontmatter.folderName}/cover.png`]?.default;
 ---
 
 <ContentLayout pagetitle=`Projects/${frontmatter.title}`>
-  <div
-    class="hero-container"
-    style={`background: linear-gradient(${frontmatter.colorFrom}, ${frontmatter.colorTo})`}
-  >
-    <h1>{frontmatter.title}</h1>
-    <h2>{frontmatter.tagline}</h2>
+  <div class="hero-container">
+    {cover && (
+      <Image src={cover} alt="" width={1600} height={560} class="hero-bg" />
+    )}
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <h1>{frontmatter.title}</h1>
+      <span class="hero-rule"></span>
+      <h2>{frontmatter.tagline}</h2>
+    </div>
   </div>
   <div class="carousel-container">
     <Carousel images={images} visibleCount={3} />
@@ -47,17 +58,86 @@ const images: ImageMetadata[] = Object.entries(allImages)
 
 <style>
   .hero-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: end;
     flex-shrink: 0;
-    padding: 1em 3em;
+    overflow: hidden;
     width: 100%;
-    min-height: 15em;
+    min-height: 18em;
     margin: 10px;
     margin-top: 0;
+    border-radius: 5px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    background-color: var(--secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--text) 92%, transparent) 0%,
+      color-mix(in srgb, var(--text) 45%, transparent) 55%,
+      transparent 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5em 2em;
+  }
+
+  .hero-content h1 {
+    color: var(--primary);
+    font-size: 2.4rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    margin: 0;
+  }
+
+  .hero-rule {
+    display: block;
+    width: 3.5em;
+    height: 4px;
+    margin: 0.7em 0;
+    border-radius: 2px;
+    background-color: var(--accent);
+  }
+
+  .hero-content h2 {
+    color: color-mix(in srgb, var(--primary) 88%, transparent);
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .hero-container {
+      min-height: 14em;
+    }
+
+    .hero-content {
+      padding: 1.2em 1.3em;
+    }
+
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
   }
 
   .carousel-container {

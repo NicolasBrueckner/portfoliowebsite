@@ -1,15 +1,18 @@
 @import "./reset.css";
 
 :root {
-    --background: #ddd1c7ff;
-    --primary: rgb(248, 243, 217);
-    --primary-transparent: rgba(248, 243, 217, 0.25);
-    --secondary: rgb(235, 229, 194);
-    --secondary-transparent: rgba(235, 229, 194, 0.7);
-    --secondary-hover: rgb(220, 214, 179);
-    --accent: rgb(185, 178, 138);
-    --text: rgb(80, 75, 56);
-    
+    /* Three core colors: everything else below is a shade derived from these. */
+    --background: #efe3d2;
+    --primary: #fbf5ea;
+    --accent: #cc6a2e;
+    --text: #4a3826;
+
+    --primary-transparent: color-mix(in srgb, var(--primary) 25%, transparent);
+    --secondary: color-mix(in srgb, var(--primary) 90%, var(--accent) 10%);
+    --secondary-hover: color-mix(in srgb, var(--primary) 78%, var(--accent) 22%);
+    --secondary-transparent: color-mix(in srgb, var(--secondary) 70%, transparent);
+    --accent-transparent: color-mix(in srgb, var(--accent) 35%, transparent);
+
     --header-height: 100px;
 }
 

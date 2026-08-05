@@ -7,8 +7,6 @@ tagline: "The chaotic interaction of a three body system visualized in a compact
 folderName: "three_body_simulation"
 link: "https://nicolasbrueckner.itch.io/three-body-simulation"
 linkText: "Play or download it on itch.io"
-colorFrom: "var(--secondary)"
-colorTo: "var(--accent)"
 ---
 
 The n-body problem is an interesting physical scenario in which multiple gravitational bodies exert forces on one another. In certain cases, these interactions can result in stable behavior, where the system returns to its initial state over time. Due to the chaotic nature of n-body systems, such initial conditions can't be directly calculated—they must instead be discovered through simulation, a process sometimes referred to as hunting for stable n-body orbits.
