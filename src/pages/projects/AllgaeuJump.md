@@ -3,7 +3,7 @@ layout: "../../layouts/ProjectLayout.astro"
 
 date: 2022-10-01
 title: "Allgäu Jump"
-tagline: "Be the first on top of the mountain and leave your oppenents in the dirt"
+tagline: "Be the first on top of the mountain and leave your opponents in the dirt"
 folderName: "allgaeu_jump"
 link: ""
 linkText: ""

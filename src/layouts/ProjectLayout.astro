@@ -33,14 +33,16 @@ const images: ImageMetadata[] = Object.entries(allImages)
   <div class="description-container">
     <slot />
   </div>
-  <div>
-    <a
-      href={frontmatter.link}
-      class="link-container"
-    >
-      {frontmatter.linkText}
-    </a>
-  </div>
+  {frontmatter.link && (
+    <div>
+      <a
+        href={frontmatter.link}
+        class="link-container"
+      >
+        {frontmatter.linkText}
+      </a>
+    </div>
+  )}
 </ContentLayout>
 
 <style>
@@ -48,6 +50,7 @@ const images: ImageMetadata[] = Object.entries(allImages)
     display: flex;
     flex-direction: column;
     justify-content: end;
+    flex-shrink: 0;
     padding: 1em 3em;
     width: 100%;
     min-height: 15em;
